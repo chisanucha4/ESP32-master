@@ -1,1 +1,1 @@
-file Sensor
+file main = Sensor 
