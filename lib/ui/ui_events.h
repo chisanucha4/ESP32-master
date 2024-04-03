@@ -14,7 +14,7 @@ void TempStatus(lv_event_t * e);
 void tempstatustext(lv_event_t * e);
 void humiditystatus(lv_event_t * e);
 void humiditystatustext(lv_event_t * e);
-void FanDisplay(lv_event_t * e);
+void Fandisplay(lv_event_t * e);
 void AotoFan(lv_event_t * e);
 void ONFan(lv_event_t * e);
 void WarningClean(lv_event_t * e);

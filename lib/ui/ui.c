@@ -139,7 +139,7 @@ void ui_event_Spinner1(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        FanDisplay(e);
+        Fandisplay(e);
     }
 }
 void ui_event_Switch1(lv_event_t * e)
