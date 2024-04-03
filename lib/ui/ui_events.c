@@ -10,20 +10,11 @@ void TempStatus(lv_event_t * e)
 	
 }
 
-void tempstatustext(lv_event_t * e)
-{
-	// Your code here
-}
-
 void humiditystatus(lv_event_t * e)
 {
 	// Your code here
 }
 
-void humiditystatustext(lv_event_t * e)
-{
-	// Your code here
-}
 
 void Fandisplay(lv_event_t * e)
 {
