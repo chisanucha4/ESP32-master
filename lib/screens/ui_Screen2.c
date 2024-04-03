@@ -35,10 +35,10 @@ void ui_Screen2_screen_init(void)
     ui_Label17 = lv_label_create(ui_Arc1);
     lv_obj_set_width(ui_Label17, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label17, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label17, -4);
+    lv_obj_set_x(ui_Label17, -2);
     lv_obj_set_y(ui_Label17, 0);
     lv_obj_set_align(ui_Label17, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label17, "35 C");
+    lv_label_set_text(ui_Label17, "35");
     lv_obj_set_style_text_font(ui_Label17, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Panel6 = lv_obj_create(ui_Screen2);
@@ -73,10 +73,10 @@ void ui_Screen2_screen_init(void)
     ui_Label18 = lv_label_create(ui_Arc2);
     lv_obj_set_width(ui_Label18, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label18, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label18, 4);
+    lv_obj_set_x(ui_Label18, 0);
     lv_obj_set_y(ui_Label18, 3);
     lv_obj_set_align(ui_Label18, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label18, "85 %");
+    lv_label_set_text(ui_Label18, "85");
     lv_obj_set_style_text_font(ui_Label18, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label3 = lv_label_create(ui_Screen2);
@@ -221,6 +221,7 @@ void ui_Screen2_screen_init(void)
     lv_obj_add_event_cb(ui_Arc1, ui_event_Arc1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Label18, ui_event_Label18, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Arc2, ui_event_Arc2, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_Spinner1, ui_event_Spinner1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Switch1, ui_event_Switch1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Switch2, ui_event_Switch2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);

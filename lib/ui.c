@@ -37,6 +37,7 @@ lv_obj_t * ui_Label18;
 lv_obj_t * ui_Label3;
 lv_obj_t * ui_Label4;
 lv_obj_t * ui_Image2;
+void ui_event_Spinner1(lv_event_t * e);
 lv_obj_t * ui_Spinner1;
 void ui_event_Switch1(lv_event_t * e);
 lv_obj_t * ui_Switch1;
@@ -58,9 +59,13 @@ lv_obj_t * ui_Image6;
 // SCREEN: ui_Screen3
 void ui_Screen3_screen_init(void);
 lv_obj_t * ui_Screen3;
+void ui_event_Panel8(lv_event_t * e);
 lv_obj_t * ui_Panel8;
+void ui_event_Panel7(lv_event_t * e);
 lv_obj_t * ui_Panel7;
+void ui_event_Slider1(lv_event_t * e);
 lv_obj_t * ui_Slider1;
+void ui_event_Slider2(lv_event_t * e);
 lv_obj_t * ui_Slider2;
 lv_obj_t * ui_Image5;
 lv_obj_t * ui_Label9;
@@ -76,6 +81,8 @@ lv_obj_t * ui_Panel4;
 lv_obj_t * ui_Label16;
 lv_obj_t * ui_Label19;
 lv_obj_t * ui_Label20;
+lv_obj_t * ui_Label21;
+lv_obj_t * ui_Label22;
 lv_obj_t * ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
@@ -104,13 +111,16 @@ void ui_event_Arc1(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         TempStatus(e);
     }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_arc_set_text_value(ui_Label17, target, "", "");
+    }
 }
 void ui_event_Label17(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        temptext(e);
+        tempstatustext(e);
     }
 }
 void ui_event_Arc2(lv_event_t * e)
@@ -118,7 +128,10 @@ void ui_event_Arc2(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        humistatus(e);
+        humiditystatus(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_arc_set_text_value(ui_Label18, target, "", "");
     }
 }
 void ui_event_Label18(lv_event_t * e)
@@ -126,7 +139,15 @@ void ui_event_Label18(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        humiditytext(e);
+        humiditystatustext(e);
+    }
+}
+void ui_event_Spinner1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        Fandisplay(e);
     }
 }
 void ui_event_Switch1(lv_event_t * e)
@@ -134,7 +155,7 @@ void ui_event_Switch1(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        Aoto(e);
+        AotoFan(e);
     }
 }
 void ui_event_Switch2(lv_event_t * e)
@@ -142,7 +163,7 @@ void ui_event_Switch2(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        ON(e);
+        ONFan(e);
     }
 }
 void ui_event_Button1(lv_event_t * e)
@@ -159,6 +180,44 @@ void ui_event_Panel9(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 50, 0, &ui_Screen1_screen_init);
+    }
+}
+void ui_event_Panel8(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        WarningClean(e);
+    }
+}
+void ui_event_Panel7(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        WarningFeed(e);
+    }
+}
+void ui_event_Slider1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        sliderTemp(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_slider_set_text_value(ui_Label21, target, "", " C");
+    }
+}
+void ui_event_Slider2(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        SliderHumidity(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_slider_set_text_value(ui_Label22, target, "", " %");
     }
 }
 void ui_event_Button2(lv_event_t * e)

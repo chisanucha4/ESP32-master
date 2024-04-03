@@ -29,13 +29,11 @@ extern lv_obj_t * ui_Screen2;
 extern lv_obj_t * ui_Panel5;
 void ui_event_Arc1(lv_event_t * e);
 extern lv_obj_t * ui_Arc1;
-void ui_event_Label17(lv_event_t * e);
 extern lv_obj_t * ui_Label17;
 extern lv_obj_t * ui_Panel6;
 extern lv_obj_t * ui_Panel3;
 void ui_event_Arc2(lv_event_t * e);
 extern lv_obj_t * ui_Arc2;
-void ui_event_Label18(lv_event_t * e);
 extern lv_obj_t * ui_Label18;
 extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui_Label4;
@@ -82,6 +80,8 @@ extern lv_obj_t * ui_Panel4;
 extern lv_obj_t * ui_Label16;
 extern lv_obj_t * ui_Label19;
 extern lv_obj_t * ui_Label20;
+extern lv_obj_t * ui_Label21;
+extern lv_obj_t * ui_Label22;
 extern lv_obj_t * ui____initial_actions0;
 
 LV_IMG_DECLARE(ui_img_1875797769);    // assets\mosquito (1).png

@@ -7,7 +7,7 @@
 
 void TempStatus(lv_event_t * e)
 {
-	// Your code here
+	
 }
 
 void tempstatustext(lv_event_t * e)

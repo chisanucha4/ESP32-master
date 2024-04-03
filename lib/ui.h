@@ -12,7 +12,6 @@ extern "C" {
 
 #include "lvgl.h"
 
-#include "lv_i18n.h"
 #include "ui_helpers.h"
 #include "ui_events.h"
 // SCREEN: ui_Screen1
@@ -41,6 +40,7 @@ extern lv_obj_t * ui_Label18;
 extern lv_obj_t * ui_Label3;
 extern lv_obj_t * ui_Label4;
 extern lv_obj_t * ui_Image2;
+void ui_event_Spinner1(lv_event_t * e);
 extern lv_obj_t * ui_Spinner1;
 void ui_event_Switch1(lv_event_t * e);
 extern lv_obj_t * ui_Switch1;
@@ -60,9 +60,13 @@ extern lv_obj_t * ui_Image6;
 // SCREEN: ui_Screen3
 void ui_Screen3_screen_init(void);
 extern lv_obj_t * ui_Screen3;
+void ui_event_Panel8(lv_event_t * e);
 extern lv_obj_t * ui_Panel8;
+void ui_event_Panel7(lv_event_t * e);
 extern lv_obj_t * ui_Panel7;
+void ui_event_Slider1(lv_event_t * e);
 extern lv_obj_t * ui_Slider1;
+void ui_event_Slider2(lv_event_t * e);
 extern lv_obj_t * ui_Slider2;
 extern lv_obj_t * ui_Image5;
 extern lv_obj_t * ui_Label9;
@@ -78,6 +82,8 @@ extern lv_obj_t * ui_Panel4;
 extern lv_obj_t * ui_Label16;
 extern lv_obj_t * ui_Label19;
 extern lv_obj_t * ui_Label20;
+extern lv_obj_t * ui_Label21;
+extern lv_obj_t * ui_Label22;
 extern lv_obj_t * ui____initial_actions0;
 
 LV_IMG_DECLARE(ui_img_1875797769);    // assets\mosquito (1).png

@@ -11,11 +11,16 @@ extern "C" {
 #endif
 
 void TempStatus(lv_event_t * e);
-void temptext(lv_event_t * e);
-void humistatus(lv_event_t * e);
-void humiditytext(lv_event_t * e);
-void Aoto(lv_event_t * e);
-void ON(lv_event_t * e);
+void tempstatustext(lv_event_t * e);
+void humiditystatus(lv_event_t * e);
+void humiditystatustext(lv_event_t * e);
+void Fandisplay(lv_event_t * e);
+void AotoFan(lv_event_t * e);
+void ONFan(lv_event_t * e);
+void WarningClean(lv_event_t * e);
+void WarningFeed(lv_event_t * e);
+void sliderTemp(lv_event_t * e);
+void SliderHumidity(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

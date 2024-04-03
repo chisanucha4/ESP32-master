@@ -26,13 +26,11 @@ lv_obj_t * ui_Screen2;
 lv_obj_t * ui_Panel5;
 void ui_event_Arc1(lv_event_t * e);
 lv_obj_t * ui_Arc1;
-void ui_event_Label17(lv_event_t * e);
 lv_obj_t * ui_Label17;
 lv_obj_t * ui_Panel6;
 lv_obj_t * ui_Panel3;
 void ui_event_Arc2(lv_event_t * e);
 lv_obj_t * ui_Arc2;
-void ui_event_Label18(lv_event_t * e);
 lv_obj_t * ui_Label18;
 lv_obj_t * ui_Label3;
 lv_obj_t * ui_Label4;
@@ -81,6 +79,8 @@ lv_obj_t * ui_Panel4;
 lv_obj_t * ui_Label16;
 lv_obj_t * ui_Label19;
 lv_obj_t * ui_Label20;
+lv_obj_t * ui_Label21;
+lv_obj_t * ui_Label22;
 lv_obj_t * ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
@@ -109,13 +109,8 @@ void ui_event_Arc1(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         TempStatus(e);
     }
-}
-void ui_event_Label17(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        tempstatustext(e);
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_arc_set_text_value(ui_Label17, target, "", " C");
     }
 }
 void ui_event_Arc2(lv_event_t * e)
@@ -125,13 +120,8 @@ void ui_event_Arc2(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         humiditystatus(e);
     }
-}
-void ui_event_Label18(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        humiditystatustext(e);
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_arc_set_text_value(ui_Label18, target, "", " %");
     }
 }
 void ui_event_Spinner1(lv_event_t * e)
@@ -197,6 +187,9 @@ void ui_event_Slider1(lv_event_t * e)
     if(event_code == LV_EVENT_CLICKED) {
         sliderTemp(e);
     }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_slider_set_text_value(ui_Label21, target, "", " C");
+    }
 }
 void ui_event_Slider2(lv_event_t * e)
 {
@@ -204,6 +197,9 @@ void ui_event_Slider2(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         SliderHumidity(e);
+    }
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        _ui_slider_set_text_value(ui_Label22, target, "", " %");
     }
 }
 void ui_event_Button2(lv_event_t * e)
