@@ -5,47 +5,14 @@
 
 #include "ui.h"
 
+#include "ui.h"
+
 void TempStatus(lv_event_t * e)
 {
-	// Your code here
-}
-
-void temptext(lv_event_t * e)
-{
-	// Your code here
-}
-
-void humistatus(lv_event_t * e)
-{
-	// Your code here
-}
-
-void humiditytext(lv_event_t * e)
-{
-	// Your code here
-}
-
-void Aoto(lv_event_t * e)
-{
-	// Your code here
-}
-
-void ON(lv_event_t * e)
-{
-	// Your code here
-}
-
-void tempstatustext(lv_event_t * e)
-{
-	// Your code here
+	
 }
 
 void humiditystatus(lv_event_t * e)
-{
-	// Your code here
-}
-
-void humiditystatustext(lv_event_t * e)
 {
 	// Your code here
 }
