@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ui_helpers.h": "c",
+        "arduino.h": "c"
+    }
+}

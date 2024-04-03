@@ -5,7 +5,6 @@
 
 #include "ui.h"
 
-#include "ui.h"
 
 void TempStatus(lv_event_t * e)
 {
