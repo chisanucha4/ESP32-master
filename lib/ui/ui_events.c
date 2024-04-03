@@ -15,7 +15,6 @@ void humiditystatus(lv_event_t * e)
 	// Your code here
 }
 
-
 void Fandisplay(lv_event_t * e)
 {
 	// Your code here
