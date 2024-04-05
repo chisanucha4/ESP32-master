@@ -29,7 +29,12 @@
 #include "ui.h"
 #include <LovyanGFX.hpp>
 #include <ESP32Time.h>
+#include <DHT.h>
 
+#define DHTPIN 2     
+#define DHTTYPE DHT11  
+
+DHT dht(DHTPIN , DHTTYPE);
 
 #ifdef PLUS
 #define SCR 30
@@ -310,10 +315,11 @@ void onBrightnessChange(lv_event_t *e)
 void setup()
 {
   Serial.begin(115200);
-
   tft.init();
   tft.initDMA();
   tft.startWrite();
+  dht.begin(2); 
+
 
 
   lv_init();
@@ -360,5 +366,25 @@ void loop()
 {
   lv_timer_handler(); /* let the GUI do its work */
   delay(5);
+   float temperature = dht.readTemperature();
+    
+    if (isnan(temperature)) {
+    Serial.println("Failed to read from DHT sensor!");
+} else {
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" °C");
 
+    float humidity = dht.readHumidity(); // อ่านค่าความชื้นจากเซ็นเซอร์
+    if (isnan(humidity)) {
+        Serial.println("Failed to read humidity from DHT sensor!");
+    } else {
+        Serial.print("Humidity: ");
+        Serial.print(humidity);
+        Serial.println(" %");
+    }
+}
+
+
+    
 }

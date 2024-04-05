@@ -4,6 +4,7 @@
 // Project name: SquareLine_Project
 
 #include "ui.h"
+#include <Arduino.h>
 
 
 void TempStatus(lv_event_t * e)

@@ -15,10 +15,10 @@ void humiditystatus(lv_event_t * e);
 void Fandisplay(lv_event_t * e);
 void AotoFan(lv_event_t * e);
 void ONFan(lv_event_t * e);
-void WarningClean(lv_event_t * e);
-void WarningFeed(lv_event_t * e);
 void sliderTemp(lv_event_t * e);
 void SliderHumidity(lv_event_t * e);
+void Feed_set(lv_event_t * e);
+void Clean_set(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

@@ -1,46 +1,51 @@
-#include "ui.h"
-#include <Arduino.h>
+#include "ui.h" 
 
-void TempStatus(lv_event_t *e) {
+
+
+void TempStatus(lv_event_t *e ) // แสดงค่าอุณหภูมิ
+{
+
+    
+}
+
+void humiditystatus(lv_event_t * e) // แสดงค่าความชื้น
+{
+	
+}
+
+void Fandisplay(lv_event_t * e) 
+{
+	
+}
+
+void AotoFan(lv_event_t * e) // // เปิด ปิดพัดลมควบคุมแบบ Aoto
+{
+	
+}
+
+void ONFan(lv_event_t * e)   // เปิด ปิดพัดลม
+{
    
 }
 
-void humiditystatus(lv_event_t * e)
-{
-	// Your code here
+void sliderTemp(lv_event_t * e)  // ปรับอุณหภูมิจาก Slider
+{ 
+	
 }
 
-void Fandisplay(lv_event_t * e)
+void SliderHumidity(lv_event_t * e) // ปรับความชื้นจาก Slider
 {
-	// Your code here
+	
 }
 
-void AotoFan(lv_event_t * e)
+
+void Feed_set(lv_event_t * e) // แจ้งเตือนอาหาร
 {
-	// Your code here
+	
 }
 
-void ONFan(lv_event_t * e)
-{
-	// Your code here
-}
 
-void WarningClean(lv_event_t * e)
+void Clean_set(lv_event_t * e) // แจ้งเตือนทำความสะอาด
 {
-	// Your code here
-}
-
-void WarningFeed(lv_event_t * e)
-{
-	// Your code here
-}
-
-void sliderTemp(lv_event_t * e)
-{
-	// Your code here
-}
-
-void SliderHumidity(lv_event_t * e)
-{
-	// Your code here
+	
 }

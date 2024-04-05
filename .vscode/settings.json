@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "ui_helpers.h": "c",
-        "arduino.h": "c"
-    }
+        "arduino.h": "c",
+        "dht.h": "c"
+    },
+    "cmake.sourceDirectory": "C:/Users/chits/Music/ESP32-master/.pio/libdeps/wt32-sc01/ArduinoJson/src"
 }

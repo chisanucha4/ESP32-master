@@ -6,7 +6,6 @@
 #include "ui.h"
 #include "ui_helpers.h"
 
-
 ///////////////////// VARIABLES ////////////////////
 
 
@@ -24,16 +23,17 @@ lv_obj_t * ui_Label2;
 // SCREEN: ui_Screen2
 void ui_Screen2_screen_init(void);
 lv_obj_t * ui_Screen2;
-lv_obj_t * ui_Panel5;
+lv_obj_t * ui_Panel3;
+lv_obj_t * ui_Label12;
 void ui_event_Arc1(lv_event_t * e);
 lv_obj_t * ui_Arc1;
+lv_obj_t * ui_Panel5;
 lv_obj_t * ui_Label17;
-lv_obj_t * ui_Panel6;
-lv_obj_t * ui_Panel3;
+lv_obj_t * ui_Label3;
 void ui_event_Arc2(lv_event_t * e);
 lv_obj_t * ui_Arc2;
+lv_obj_t * ui_Panel6;
 lv_obj_t * ui_Label18;
-lv_obj_t * ui_Label3;
 lv_obj_t * ui_Label4;
 lv_obj_t * ui_Image2;
 void ui_event_Spinner1(lv_event_t * e);
@@ -49,7 +49,6 @@ void ui_event_Button1(lv_event_t * e);
 lv_obj_t * ui_Button1;
 lv_obj_t * ui_Label8;
 lv_obj_t * ui_Image3;
-lv_obj_t * ui_Label12;
 void ui_event_Panel9(lv_event_t * e);
 lv_obj_t * ui_Panel9;
 lv_obj_t * ui_Image6;
@@ -58,10 +57,8 @@ lv_obj_t * ui_Image6;
 // SCREEN: ui_Screen3
 void ui_Screen3_screen_init(void);
 lv_obj_t * ui_Screen3;
-void ui_event_Panel8(lv_event_t * e);
-lv_obj_t * ui_Panel8;
-void ui_event_Panel7(lv_event_t * e);
 lv_obj_t * ui_Panel7;
+lv_obj_t * ui_Panel8;
 void ui_event_Slider1(lv_event_t * e);
 lv_obj_t * ui_Slider1;
 void ui_event_Slider2(lv_event_t * e);
@@ -78,10 +75,12 @@ lv_obj_t * ui_Image4;
 lv_obj_t * ui_Label15;
 lv_obj_t * ui_Panel4;
 lv_obj_t * ui_Label16;
+void ui_event_Label19(lv_event_t * e);
 lv_obj_t * ui_Label19;
+void ui_event_Label20(lv_event_t * e);
 lv_obj_t * ui_Label20;
-lv_obj_t * ui_Label21;
 lv_obj_t * ui_Label22;
+lv_obj_t * ui_Label21;
 lv_obj_t * ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
@@ -165,22 +164,6 @@ void ui_event_Panel9(lv_event_t * e)
         _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_FADE_ON, 50, 0, &ui_Screen1_screen_init);
     }
 }
-void ui_event_Panel8(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        WarningClean(e);
-    }
-}
-void ui_event_Panel7(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        WarningFeed(e);
-    }
-}
 void ui_event_Slider1(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -209,6 +192,21 @@ void ui_event_Button2(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
         _ui_screen_change(&ui_Screen2, LV_SCR_LOAD_ANIM_FADE_ON, 5, 0, &ui_Screen2_screen_init);
+    }
+}
+void ui_event_Label19(lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        Feed_set(e);
+    }
+}
+void ui_event_Label20(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_VALUE_CHANGED) {
+        Clean_set(e);
     }
 }
 
