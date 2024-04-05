@@ -1,5 +1,4 @@
 #include "ui.h"
-#include <DHT.h>
 #include <Arduino.h>
 
 void TempStatus(lv_event_t *e) {
