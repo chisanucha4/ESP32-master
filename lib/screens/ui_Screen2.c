@@ -30,7 +30,7 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_y(ui_Arc1, -48);
     lv_obj_set_align(ui_Arc1, LV_ALIGN_CENTER);
     lv_arc_set_range(ui_Arc1, 20, 40);
-
+    lv_obj_set_click(ui_Arc1, false); //ปิดการคลิก
 
     ui_Label17 = lv_label_create(ui_Arc1);
     lv_obj_set_width(ui_Label17, LV_SIZE_CONTENT);   /// 1
@@ -67,8 +67,9 @@ void ui_Screen2_screen_init(void)
     lv_obj_set_height(ui_Arc2, 120);
     lv_obj_set_x(ui_Arc2, 126);
     lv_obj_set_y(ui_Arc2, -48);
+    lv_arc_set_range(ui_Arc2, 0, 100);
     lv_obj_set_align(ui_Arc2, LV_ALIGN_CENTER);
-
+    lv_obj_set_click(ui_Arc2, false); // ปิดการคลิก
 
     ui_Label18 = lv_label_create(ui_Arc2);
     lv_obj_set_width(ui_Label18, LV_SIZE_CONTENT);   /// 1

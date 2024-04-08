@@ -36,6 +36,8 @@
 
 DHT dht(DHTPIN , DHTTYPE);
 
+void updateLVGLTemp();
+
 #ifdef PLUS
 #define SCR 30
 class LGFX : public lgfx::LGFX_Device
@@ -312,6 +314,29 @@ void onBrightnessChange(lv_event_t *e)
   tft.setBrightness(brightness);
 }
 
+// แสดงค่าตัวแปลในจอ
+
+float temperature = 0 ;
+float humidity = 0 ;
+void updateLVGLTemp()
+{
+  char tempString[20]; // สตริงที่จะใช้ในการแสดงอุณหภูมิ
+  char humidityString[20]; // สตริงที่จะใช้ในการแสดงความชื้น
+
+  // แปลงค่าอุณหภูมิความชื้นจาก float เป็นสตริงโดยใช้ sprintf
+  sprintf(tempString, "%.2f", temperature); // แสดงทศนิยม 2 ตำแหน่ง
+  sprintf(humidityString, "%.2f", humidity); // แสดงทศนิยม 2 ตำแหน่ง
+
+  // Update LVGL elements with time and date data
+  lv_label_set_text(ui_Label17, tempString);
+  int16_t tempValue = lroundf(temperature);
+  lv_arc_set_value(ui_Arc1, tempValue);
+
+  lv_label_set_text(ui_Label18, humidityString);
+  int16_t humidityValue = lroundf(humidity);
+  lv_arc_set_value(ui_Arc2, humidityValue);
+}
+
 void setup()
 {
   Serial.begin(115200);
@@ -360,31 +385,35 @@ void setup()
     Serial.println("Setup done");
   }
 
+  updateLVGLTemp();
+
+
 }
 
 void loop()
 {
   lv_timer_handler(); /* let the GUI do its work */
   delay(5);
-   float temperature = dht.readTemperature();
-    
-    if (isnan(temperature)) {
-    Serial.println("Failed to read from DHT sensor!");
-} else {
-    Serial.print("Temperature: ");
-    Serial.print(temperature);
-    Serial.println(" °C");
+    temperature = dht.readTemperature();
+    updateLVGLTemp();
+     if (isnan(temperature))
+    {
+      Serial.println("Failed to read from DHT sensor!");
+    }
+    else
+    {
+      Serial.print("Temperature: ");
+      Serial.print(temperature);
+      Serial.println(" °C");
 
-    float humidity = dht.readHumidity(); // อ่านค่าความชื้นจากเซ็นเซอร์
-    if (isnan(humidity)) {
+       humidity = dht.readHumidity(); // อ่านค่าความชื้นจากเซ็นเซอร์
+      if (isnan(humidity))
+      {
         Serial.println("Failed to read humidity from DHT sensor!");
     } else {
         Serial.print("Humidity: ");
         Serial.print(humidity);
         Serial.println(" %");
     }
-}
-
-
-    
+    }
 }
